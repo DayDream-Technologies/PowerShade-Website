@@ -8,6 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Three.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
 </head>
 <body>
     <header>
@@ -42,7 +46,10 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/Product photo.png" alt="PowerShade beach umbrella with solar panels" class="hero-img">
+                <div id="umbrella-model-container" class="model-container">
+                    <!-- 3D model will be rendered here -->
+                    <div class="model-loading">Loading 3D model...</div>
+                </div>
                 <p class="ai-disclaimer">*Images are AI-generated for demonstration purposes</p>
             </div>
         </div>
@@ -147,5 +154,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/umbrella-model.js"></script>
 </body>
 </html> 
