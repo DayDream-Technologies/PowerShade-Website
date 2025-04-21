@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PowerShade - Solar Beach Umbrellas</title>
+    <title>PowerShade - Solar-Powered Beach Umbrellas</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Three.js library -->
+    <!-- Three.js library and related scripts -->
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    -->
 </head>
 <body>
     <header>
@@ -38,19 +40,24 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Power Your Day at the Beach</h1>
-                <p>Introducing PowerShade: Solar-powered beach umbrellas that let you enjoy the sun while keeping your devices charged.</p>
-                <div class="cta-buttons">
+                <h1>Power Your Beach Day</h1>
+                <p>Stay connected with our solar-powered beach umbrellas. Charge your devices while you enjoy the sun and surf.</p>
+                <div class="hero-buttons">
                     <a href="shop.html" class="btn primary">Shop Now</a>
                     <a href="about.html" class="btn secondary">Learn More</a>
                 </div>
             </div>
             <div class="hero-image">
+                <!-- Restore the original image -->
+                <img src="images/Pro Product Photo.png" class="hero-img">
+                <p class="ai-disclaimer">*Images are AI-generated for demonstration purposes</p>
+                
+                <!-- Comment out the 3D model container
                 <div id="umbrella-model-container" class="model-container">
-                    <!-- 3D model will be rendered here -->
-                    <div class="model-loading">Loading 3D model...</div>
+                    <div class="model-loading">Loading 3D Model...</div>
                 </div>
                 <p class="ai-disclaimer">*Images are AI-generated for demonstration purposes</p>
+                -->
             </div>
         </div>
     </section>
@@ -60,25 +67,46 @@
             <h2>Why Choose PowerShade?</h2>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
+                    <div class="feature-icon">☀️</div>
                     <h3>Solar Powered</h3>
-                    <p>High-efficiency solar panels embedded directly into the umbrella canopy</p>
+                    <p>Harness the sun's energy to keep your devices charged all day long.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Always Charged</h3>
-                    <p>USB ports and wireless charging pad keep your devices powered all day</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💪</div>
-                    <h3>Durable Design</h3>
-                    <p>Weather-resistant materials built to withstand sun, wind, and sand</p>
+                    <div class="feature-icon">🔌</div>
+                    <h3>Multiple Ports</h3>
+                    <p>Charge multiple devices simultaneously with our USB ports.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌊</div>
                     <h3>Beach Ready</h3>
-                    <p>Lightweight yet sturdy design with sand anchor for stability</p>
+                    <p>Designed specifically for beach conditions with sturdy construction.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h3>Battery Storage</h3>
+                    <p>Store solar energy for use even when the sun goes down.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-preview">
+        <div class="container">
+            <div class="product-content">
+                <h2>The PowerShade Experience</h2>
+                <p>Our innovative beach umbrellas combine sun protection with solar technology to keep you connected throughout your beach day.</p>
+                <ul class="product-features">
+                    <li>Premium UV protection fabric</li>
+                    <li>Adjustable tilt mechanism</li>
+                    <li>Sturdy sand anchor</li>
+                    <li>Integrated solar panels</li>
+                    <li>USB charging ports</li>
+                    <li>Battery storage system</li>
+                </ul>
+                <a href="about.html" class="btn primary">Discover PowerShade</a>
+            </div>
+            <div class="product-image">
+                <img src="images/beach family demo.png" alt="Family enjoying PowerShade at the beach" class="product-img">
             </div>
         </div>
     </section>
@@ -86,10 +114,33 @@
     <section class="testimonials">
         <div class="container">
             <h2>What Our Customers Say</h2>
-            <div class="testimonial-slider">
-                <div class="testimonial">
-                    <p>"I never have to worry about my phone dying at the beach anymore. PowerShade has been a game-changer for our family beach days!"</p>
-                    <div class="customer">- Sarah T., Grand Rapids</div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"PowerShade has completely changed our beach days. No more worrying about dead phones!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Sarah M.</h4>
+                        <p>Lake Michigan Beach Enthusiast</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The battery life is impressive. We can charge all our devices and still have power left for the drive home."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>James T.</h4>
+                        <p>Michigan Tech Lover</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Finally, a beach umbrella that understands modern needs. The USB ports are a game-changer!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Emily R.</h4>
+                        <p>Digital Nomad</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,13 +148,13 @@
 
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
+            <div class="cta-content center">
                 <h2>Ready to Upgrade Your Beach Experience?</h2>
-                <p>Join the solar revolution and never worry about dead batteries again.</p>
-                <a href="shop.html" class="btn primary">Shop PowerShade Now</a>
-            </div>
-            <div class="cta-image">
-                <img src="images/beach family demo.png" alt="Family enjoying PowerShade at the beach" class="cta-img">
+                <p>Join thousands of satisfied customers who never worry about device power at the beach.</p>
+                <div class="cta-buttons">
+                    <a href="shop.html" class="btn primary">Shop PowerShade</a>
+                    <a href="about.html" class="btn secondary">Learn More</a>
+                </div>
             </div>
         </div>
     </section>
@@ -154,6 +205,8 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <!-- Comment out the umbrella model script
     <script src="js/umbrella-model.js"></script>
+    -->
 </body>
 </html> 
