@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     controls.maxDistance = 10;
     controls.maxPolarAngle = Math.PI / 2;
     
-    // Create a simple umbrella model (placeholder until we have a real model)
+    // Create a standard umbrella model
     createUmbrellaModel();
     
     // Handle window resize
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start animation
     animate();
     
-    // Function to create a simple umbrella model
+    // Function to create a standard umbrella model
     function createUmbrellaModel() {
         // Create umbrella pole
         const poleGeometry = new THREE.CylinderGeometry(0.05, 0.05, 3, 16);
@@ -62,16 +62,34 @@ document.addEventListener('DOMContentLoaded', function() {
         pole.position.y = -1.5;
         scene.add(pole);
         
-        // Create umbrella canopy
-        const canopyGeometry = new THREE.ConeGeometry(1.5, 0.5, 16);
+        // Create umbrella canopy (more standard shape)
+        const canopyGeometry = new THREE.ConeGeometry(1.5, 0.8, 16);
         const canopyMaterial = new THREE.MeshStandardMaterial({ 
             color: 0x0066cc,
             side: THREE.DoubleSide
         });
         const canopy = new THREE.Mesh(canopyGeometry, canopyMaterial);
-        canopy.position.y = 1;
+        canopy.position.y = 1.2;
         canopy.rotation.x = Math.PI;
         scene.add(canopy);
+        
+        // Create umbrella ribs
+        const ribGeometry = new THREE.CylinderGeometry(0.01, 0.01, 1.5, 8);
+        const ribMaterial = new THREE.MeshStandardMaterial({ color: 0x333333 });
+        
+        for (let i = 0; i < 8; i++) {
+            const rib = new THREE.Mesh(ribGeometry, ribMaterial);
+            const angle = (i / 8) * Math.PI * 2;
+            
+            rib.position.x = Math.cos(angle) * 0.75;
+            rib.position.z = Math.sin(angle) * 0.75;
+            rib.position.y = 0.8;
+            
+            rib.rotation.z = Math.PI / 2;
+            rib.rotation.y = -angle;
+            
+            scene.add(rib);
+        }
         
         // Create solar panels on the canopy
         const panelGeometry = new THREE.BoxGeometry(0.3, 0.01, 0.3);
@@ -85,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             panel.position.x = Math.cos(angle) * radius;
             panel.position.z = Math.sin(angle) * radius;
-            panel.position.y = 1.1;
+            panel.position.y = 1.3;
             
             panel.rotation.y = -angle;
             panel.rotation.x = Math.PI / 2;
@@ -93,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scene.add(panel);
         }
         
-        // Add USB ports to the pole
+        // Add USB ports to the pole (halfway up)
         const portGeometry = new THREE.BoxGeometry(0.1, 0.05, 0.05);
         const portMaterial = new THREE.MeshStandardMaterial({ color: 0x333333 });
         
@@ -113,6 +131,44 @@ document.addEventListener('DOMContentLoaded', function() {
         const base = new THREE.Mesh(baseGeometry, baseMaterial);
         base.position.y = -1.6;
         scene.add(base);
+        
+        // Add PowerShade logo to the canopy
+        createLogo();
+    }
+    
+    // Function to create the PowerShade logo
+    function createLogo() {
+        // Create a simple text geometry for the logo
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = 256;
+        canvas.height = 256;
+        
+        // Draw the logo background
+        context.fillStyle = '#0066cc';
+        context.fillRect(0, 0, 256, 256);
+        
+        // Draw the text
+        context.fillStyle = '#ffffff';
+        context.font = 'bold 48px Arial';
+        context.textAlign = 'center';
+        context.textBaseline = 'middle';
+        context.fillText('PowerShade', 128, 128);
+        
+        // Create a texture from the canvas
+        const texture = new THREE.CanvasTexture(canvas);
+        
+        // Create a plane for the logo
+        const logoGeometry = new THREE.PlaneGeometry(1, 0.5);
+        const logoMaterial = new THREE.MeshBasicMaterial({ 
+            map: texture,
+            side: THREE.DoubleSide
+        });
+        
+        const logo = new THREE.Mesh(logoGeometry, logoMaterial);
+        logo.position.set(0, 1.5, 0);
+        logo.rotation.x = Math.PI / 2;
+        scene.add(logo);
     }
     
     // Remove loading message when model is ready
