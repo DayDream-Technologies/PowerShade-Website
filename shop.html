@@ -14,7 +14,7 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <h1>PowerShade</h1>
+                    <a href="index.html"><h1>PowerShade</h1></a>
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
@@ -38,37 +38,26 @@
     <section class="page-banner">
         <div class="container">
             <h1>Shop PowerShade</h1>
-            <p>Find the perfect solar umbrella for your outdoor needs</p>
+            <p>Discover the perfect solar-powered umbrella for your outdoor adventures</p>
         </div>
     </section>
 
     <section class="shop-filters">
         <div class="container">
             <div class="filter-container">
-                <div class="filter-group">
-                    <label for="sort">Sort By:</label>
-                    <select id="sort" name="sort">
-                        <option value="popular">Most Popular</option>
-                        <option value="newest">Newest</option>
-                        <option value="price-low">Price (Low to High)</option>
-                        <option value="price-high">Price (High to Low)</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="category">Category:</label>
-                    <select id="category" name="category">
-                        <option value="all">All Products</option>
-                        <option value="umbrellas">Umbrellas</option>
-                        <option value="accessories">Accessories</option>
-                        <option value="bundles">Bundles</option>
-                    </select>
+                <div class="category-links">
+                    <a href="#umbrellas" class="category-link">☀️ Umbrellas</a>
+                    <a href="#accessories" class="category-link">🔧 Accessories</a>
+                    <a href="#bundles" class="category-link">📦 Bundles</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="shop-products">
+    <!-- Umbrellas Section -->
+    <section class="shop-products" id="umbrellas">
         <div class="container">
+            <h2 class="section-title">☀️ Solar Umbrellas</h2>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-badge bestseller">Bestseller</div>
@@ -80,32 +69,34 @@
                         <h3>PowerShade Classic</h3>
                         <p class="product-description">Our original solar beach umbrella with integrated 25W panels and dual charging ports.</p>
                         <div class="product-meta">
-                            <div class="product-price">$179.99</div>
+                            <div class="product-price">$359.99</div>
                             <div class="product-rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="count">(124)</span>
                             </div>
                         </div>
-                        <button class="btn primary add-to-cart">Add to Cart</button>
+                        <!-- <button class="btn primary add-to-cart">Add to Cart</button> -->
+                        <button class="btn primary" disabled style="opacity: 0.6; cursor: not-allowed;">Coming soon</button>
                     </div>
                 </div>
 
                 <div class="product-card">
                     <div class="product-badge new">New</div>
                     <div class="product-image">
-                        <img src="images/Pro Product Photo.png" alt="PowerShade Pro beach umbrella" class="product-img">
+                        <img src="images/pro-product-photo.png" alt="PowerShade Pro beach umbrella" class="product-img">
                     </div>
                     <div class="product-info">
                         <h3>PowerShade Pro</h3>
                         <p class="product-description">Enhanced 40W solar array with faster charging, wireless charging pad, and integrated battery storage.</p>
                         <div class="product-meta">
-                            <div class="product-price">$249.99</div>
+                            <div class="product-price">$499.99</div>
                             <div class="product-rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="count">(86)</span>
                             </div>
                         </div>
-                        <button class="btn primary add-to-cart">Add to Cart</button>
+                        <!-- <button class="btn primary add-to-cart">Add to Cart</button> -->
+                        <button class="btn primary" disabled style="opacity: 0.6; cursor: not-allowed;">Coming soon</button>
                     </div>
                 </div>
 
@@ -117,16 +108,52 @@
                         <h3>PowerShade Mini</h3>
                         <p class="product-description">Compact size perfect for personal use, with 15W solar panels and single USB port.</p>
                         <div class="product-meta">
-                            <div class="product-price">$129.99</div>
+                            <div class="product-price">$259.99</div>
                             <div class="product-rating">
                                 <span class="stars">★★★★☆</span>
                                 <span class="count">(93)</span>
                             </div>
                         </div>
-                        <button class="btn primary add-to-cart">Add to Cart</button>
+                        <!-- <button class="btn primary add-to-cart">Add to Cart</button> -->
+                        <button class="btn primary" disabled style="opacity: 0.6; cursor: not-allowed;">Coming soon</button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Accessories Section -->
+    <section class="shop-products shop-products-alt" id="accessories">
+        <div class="container">
+            <h2 class="section-title">🔧 Accessories</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/Accessory Pack.png" alt="PowerShade Accessory Pack" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>PowerShade Accessory Pack</h3>
+                        <p class="product-description">Complete your setup with our heavy-duty sand anchor, protective case, and backup battery pack.</p>
+                        <div class="product-meta">
+                            <div class="product-price">$139.99</div>
+                            <div class="product-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="count">(108)</span>
+                            </div>
+                        </div>
+                        <!-- <button class="btn primary add-to-cart">Add to Cart</button> -->
+                        <button class="btn primary" disabled style="opacity: 0.6; cursor: not-allowed;">Coming soon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bundles Section -->
+    <section class="shop-products" id="bundles">
+        <div class="container">
+            <h2 class="section-title">📦 Bundles</h2>
+            <div class="product-grid">
                 <div class="product-card">
                     <div class="product-badge sale">Sale</div>
                     <div class="product-image">
@@ -137,33 +164,16 @@
                         <p class="product-description">One PowerShade Pro, one PowerShade Mini, and essential accessories for the perfect family beach day.</p>
                         <div class="product-meta">
                             <div class="product-price">
-                                <span class="regular-price">$399.99</span>
-                                <span class="sale-price">$349.99</span>
+                                <span class="regular-price">$799.99</span>
+                                <span class="sale-price">$699.99</span>
                             </div>
                             <div class="product-rating">
                                 <span class="stars">★★★★★</span>
                                 <span class="count">(57)</span>
                             </div>
                         </div>
-                        <button class="btn primary add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/Accessory Pack.png" alt="PowerShade Accessory Pack" class="product-img">
-                    </div>
-                    <div class="product-info">
-                        <h3>PowerShade Accessory Pack</h3>
-                        <p class="product-description">Complete your setup with our heavy-duty sand anchor, protective case, and backup battery pack.</p>
-                        <div class="product-meta">
-                            <div class="product-price">$69.99</div>
-                            <div class="product-rating">
-                                <span class="stars">★★★★★</span>
-                                <span class="count">(108)</span>
-                            </div>
-                        </div>
-                        <button class="btn primary add-to-cart">Add to Cart</button>
+                        <!-- <button class="btn primary add-to-cart">Add to Cart</button> -->
+                        <button class="btn primary" disabled style="opacity: 0.6; cursor: not-allowed;">Coming soon</button>
                     </div>
                 </div>
             </div>
@@ -218,7 +228,7 @@
         </div>
     </section>
 
-    <section class="customer-reviews">
+    <!-- <section class="customer-reviews">
         <div class="container">
             <h2>What Our Customers Say</h2>
             <div class="reviews-slider">
@@ -248,27 +258,46 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="faq">
         <div class="container">
             <h2>Frequently Asked Questions</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">How much power can the PowerShade generate?</div>
+                    <div class="faq-question">
+                        <span class="faq-icon">⚡</span>
+                        <span>How much power can the PowerShade generate?</span>
+                    </div>
                     <div class="faq-answer">Depending on the model, PowerShade umbrellas can generate between 15W (Mini) and 50W (XL) of solar power in optimal sunlight conditions. This is sufficient to charge smartphones, tablets, speakers, and other small devices.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Do PowerShade umbrellas work on cloudy days?</div>
+                    <div class="faq-question">
+                        <span class="faq-icon">☁️</span>
+                        <span>Do PowerShade umbrellas work on cloudy days?</span>
+                    </div>
                     <div class="faq-answer">Yes, but with reduced efficiency. Our solar panels can still collect energy on cloudy days, just at a lower rate. All our models except the Mini also include battery storage to save energy for when you need it most.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">How long does shipping take?</div>
-                    <div class="faq-answer">Standard shipping within Michigan typically takes 2-3 business days. For other states in the continental US, expect 4-7 business days. Express shipping options are available at checkout.</div>
+                    <div class="faq-question">
+                        <span class="faq-icon">🚚</span>
+                        <span>How long does shipping take?</span>
+                    </div>
+                    <div class="faq-answer">Standard shipping within Michigan typically takes 6-9 business days. For other states in the continental US, expect 12-21 business days. Express shipping options are available at checkout for faster delivery.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Are PowerShade umbrellas waterproof?</div>
+                    <div class="faq-question">
+                        <span class="faq-icon">💧</span>
+                        <span>Are PowerShade umbrellas waterproof?</span>
+                    </div>
                     <div class="faq-answer">Yes! The umbrella canopy is fully waterproof, and all electronic components are protected with IPX4-rated water resistance. However, we recommend closing the umbrella during heavy storms.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span class="faq-icon">📦</span>
+                        <span>Do you offer bulk discounts?</span>
+                    </div>
+                    <div class="faq-answer">Yes! We offer attractive bulk discounts for orders of 5 or more units. This is perfect for resorts, beach clubs, event planners, and corporate gifting. Contact our sales team for custom pricing and volume orders.</div>
                 </div>
             </div>
         </div>
@@ -285,9 +314,9 @@
                     <div class="link-group">
                         <h3>Shop</h3>
                         <ul>
-                            <li><a href="shop.html">PowerShade Umbrellas</a></li>
-                            <li><a href="shop.html">Accessories</a></li>
-                            <li><a href="shop.html">Gift Cards</a></li>
+                            <li><a href="#umbrellas">PowerShade Umbrellas</a></li>
+                            <li><a href="#accessories">Accessories</a></li>
+                            <li><a href="#bundles">Bundles</a></li>
                         </ul>
                     </div>
                     <div class="link-group">
@@ -295,7 +324,6 @@
                         <ul>
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="#">Contact</a></li>
-                            <li><a href="#">Careers</a></li>
                         </ul>
                     </div>
                     <div class="link-group">
@@ -310,11 +338,6 @@
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 PowerShade. All rights reserved. Proudly based in Michigan.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook">FB</a>
-                    <a href="#" aria-label="Instagram">IG</a>
-                    <a href="#" aria-label="Twitter">TW</a>
-                </div>
             </div>
         </div>
     </footer>
