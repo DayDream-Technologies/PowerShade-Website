@@ -28,7 +28,7 @@ const benefits = [
 
 export function WhyShop() {
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-gray-50 scene-beach">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-ocean-800 mb-12">

@@ -11,7 +11,7 @@ interface PageBannerProps {
 export function PageBanner({ title, description, backgroundImage }: PageBannerProps) {
   return (
     <section
-      className="relative py-20 md:py-28 overflow-hidden"
+      className={`relative py-20 md:py-28 overflow-hidden ${!backgroundImage ? 'scene-waves-double' : ''}`}
       style={
         backgroundImage
           ? {
@@ -24,7 +24,7 @@ export function PageBanner({ title, description, backgroundImage }: PageBannerPr
     >
       {/* Default gradient background if no image */}
       {!backgroundImage && (
-        <div className="absolute inset-0 bg-gradient-to-br from-ocean-100 via-ocean-50 to-sand-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-ocean-100 via-ocean-50 to-sand-50 -z-10" />
       )}
 
       <div className="container relative z-10">

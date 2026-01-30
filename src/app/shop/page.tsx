@@ -48,7 +48,7 @@ export default function ShopPage() {
       </section>
 
       {/* Umbrellas Section */}
-      <section id="umbrellas" className="section-padding bg-white scroll-mt-32">
+      <section id="umbrellas" className="section-padding bg-white scroll-mt-32 scene-waves">
         <div className="container">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-bold text-center text-ocean-800 mb-8">
@@ -66,7 +66,7 @@ export default function ShopPage() {
       </section>
 
       {/* Accessories Section */}
-      <section id="accessories" className="section-padding bg-gray-50 scroll-mt-32">
+      <section id="accessories" className="section-padding bg-gray-50 scroll-mt-32 scene-clouds">
         <div className="container">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-bold text-center text-ocean-800 mb-8">
@@ -84,7 +84,7 @@ export default function ShopPage() {
       </section>
 
       {/* Bundles Section */}
-      <section id="bundles" className="section-padding bg-white scroll-mt-32">
+      <section id="bundles" className="section-padding bg-white scroll-mt-32 scene-sun-rays-right">
         <div className="container">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-bold text-center text-ocean-800 mb-8">

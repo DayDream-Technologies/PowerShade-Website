@@ -5,6 +5,7 @@ export interface UseCase {
   benefits: string[]
   additionalInfo: string
   image: string
+  scene: 'waves' | 'waves-double' | 'grass' | 'camping' | 'backyard' | 'clouds' | 'sun-rays' | 'beach'
 }
 
 export const useCases: UseCase[] = [
@@ -20,6 +21,7 @@ export const useCases: UseCase[] = [
     ],
     additionalInfo: 'The PowerShade\'s sturdy sand anchor keeps it stable even in Michigan\'s lake breezes, while the adjustable tilt mechanism lets you maximize both shade and solar exposure throughout the day.',
     image: '/images/beach-family-demo.png',
+    scene: 'beach',
   },
   {
     id: 'lakeside',
@@ -33,6 +35,7 @@ export const useCases: UseCase[] = [
     ],
     additionalInfo: 'The PowerShade\'s lightweight design makes it easy to transport from your car to your perfect picnic spot. The integrated battery storage means you can continue charging even as the sun begins to set on your perfect Michigan evening.',
     image: '/images/Family Beach Portrait.png',
+    scene: 'waves-double',
   },
   {
     id: 'events',
@@ -46,6 +49,7 @@ export const useCases: UseCase[] = [
     ],
     additionalInfo: 'The PowerShade\'s distinctive design makes it easy to spot in a crowd—perfect for establishing a meeting point with friends. The secure storage pocket in the pole keeps valuables safe while you enjoy the event.',
     image: '/images/Relaxing demo.png',
+    scene: 'grass',
   },
   {
     id: 'camping',
@@ -59,6 +63,7 @@ export const useCases: UseCase[] = [
     ],
     additionalInfo: 'While camping in Michigan\'s beautiful state and national parks, the PowerShade\'s built-in battery reserve stores energy during the day that you can use to power essentials at night. The adjustable height accommodates various terrains and seating arrangements.',
     image: '/images/Camping scene.png',
+    scene: 'camping',
   },
   {
     id: 'backyard',
@@ -72,5 +77,6 @@ export const useCases: UseCase[] = [
     ],
     additionalInfo: 'The PowerShade\'s durable construction withstands Michigan\'s varied climate, from hot summer days to sudden summer storms. The easy setup and takedown process means you can quickly adapt to changing weather conditions.',
     image: '/images/Backyard scene.png',
+    scene: 'backyard',
   },
 ]

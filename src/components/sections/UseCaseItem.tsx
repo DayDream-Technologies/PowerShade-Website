@@ -4,16 +4,34 @@ import Image from 'next/image'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SlideIn } from '@/components/animations/SlideIn'
 import { type UseCase } from '@/data/useCases'
-import { img } from '@/lib/utils'
+import { img, cn } from '@/lib/utils'
 
 interface UseCaseItemProps {
   useCase: UseCase
   reverse?: boolean
 }
 
+// Map scene names to CSS classes
+const sceneClasses: Record<UseCase['scene'], string> = {
+  'waves': 'scene-waves',
+  'waves-double': 'scene-waves-double',
+  'grass': 'scene-grass',
+  'camping': 'scene-camping',
+  'backyard': 'scene-backyard',
+  'clouds': 'scene-clouds',
+  'sun-rays': 'scene-sun-rays',
+  'beach': 'scene-beach',
+}
+
 export function UseCaseItem({ useCase, reverse = false }: UseCaseItemProps) {
+  const sceneClass = sceneClasses[useCase.scene]
+  
   return (
-    <div className={`grid lg:grid-cols-2 gap-12 items-center ${reverse ? 'lg:grid-flow-dense' : ''}`}>
+    <div className={cn(
+      'grid lg:grid-cols-2 gap-12 items-center rounded-2xl p-8 -mx-4 md:-mx-8',
+      sceneClass,
+      reverse ? 'lg:grid-flow-dense' : ''
+    )}>
       {/* Content */}
       <SlideIn direction={reverse ? 'right' : 'left'} className={reverse ? 'lg:col-start-2' : ''}>
         <div>

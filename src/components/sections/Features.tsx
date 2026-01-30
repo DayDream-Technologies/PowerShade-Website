@@ -6,7 +6,7 @@ import { features } from '@/data/features'
 
 export function Features() {
   return (
-    <section className="section-padding bg-gray-50">
+    <section className="section-padding bg-gray-50 scene-waves-double">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-ocean-800 mb-4">
