@@ -1,52 +1,107 @@
 # PowerShade Website
 
-This is a static website for PowerShade, a company selling solar-powered beach umbrellas based in Michigan.
+A modern React/Next.js website for PowerShade - solar-powered beach umbrellas that keep your devices charged while you enjoy the sun.
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: React Spring
+- **Deployment**: Static export for GitHub Pages
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ installed
+- npm or yarn
+
+### Installation
+
+```bash
+# Install dependencies
+npm install
+
+# Or using the build script (PowerShell)
+.\build.ps1 -Install
+```
+
+### Development
+
+```bash
+# Start development server
+npm run dev
+
+# Or using the build script
+.\build.ps1 -Dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Building for Production
+
+```bash
+# Build the static site
+npm run build
+
+# Or using the build script (recommended for GitHub Pages)
+.\build.ps1 -Export
+```
+
+The static site will be exported to the `out/` folder.
 
 ## Project Structure
 
 ```
-├── index.html         # Homepage
-├── about.html         # Product information page
-├── uses.html          # Use cases page
-├── shop.html          # Storefront page
-├── css/
-│   └── styles.css     # Main stylesheet
-├── js/
-│   └── main.js        # JavaScript functionality
-└── images/            # Directory for future images
+├── public/
+│   └── images/           # Static images and assets
+├── src/
+│   ├── app/              # Next.js App Router pages
+│   │   ├── page.tsx      # Home page
+│   │   ├── about/        # About/Product page
+│   │   ├── uses/         # Use Cases page
+│   │   └── shop/         # Shop page
+│   ├── components/
+│   │   ├── animations/   # React Spring animation wrappers
+│   │   ├── layout/       # Header, Footer, SkipLink
+│   │   ├── sections/     # Page sections (Hero, Features, etc.)
+│   │   └── ui/           # Reusable UI components
+│   ├── data/             # Static data (products, FAQ, etc.)
+│   └── lib/              # Utility functions
+├── tailwind.config.ts    # Tailwind CSS configuration
+└── next.config.js        # Next.js configuration
 ```
 
 ## Features
 
-- Responsive design that works on mobile, tablet, and desktop devices
-- Interactive shopping cart functionality
-- Modern, clean design with blue color scheme
-- Placeholder sections for images (with text prompts for image generation)
+- **Responsive Design**: Fully responsive across all device sizes
+- **Animations**: Smooth scroll-triggered and hover animations using React Spring
+- **Accessibility**: Skip links, semantic HTML, proper ARIA attributes
+- **SEO Optimized**: Meta descriptions, Open Graph tags, JSON-LD schema
+- **Performance**: Image optimization, lazy loading, font preloading
+- **Theme**: Custom "Ocean Sunset" color palette with Tailwind CSS
 
-## Image Placeholders
+## Build Script (PowerShell)
 
-The website includes placeholder sections for images with text prompts that can be used to generate images using an AI image generation model. These prompts are included as HTML comments within the image placeholder divs.
+The `build.ps1` script provides convenient commands:
 
-## Browser Compatibility
+```powershell
+.\build.ps1 -Dev      # Start development server
+.\build.ps1 -Build    # Build for production
+.\build.ps1 -Export   # Export static site for GitHub Pages
+.\build.ps1 -Clean    # Remove build artifacts
+.\build.ps1 -Install  # Install dependencies
+```
 
-This website is compatible with:
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+## Deployment
 
-## Setup Instructions
+This site is configured for GitHub Pages deployment:
 
-1. Clone this repository to your local machine
-2. Open any of the HTML files in your web browser to view the website
-3. Replace the image placeholders with actual images (using the provided prompts if desired)
+1. Run `.\build.ps1 -Export` to build the static site
+2. The `out/` folder contains the deployable files
+3. Configure GitHub Pages to serve from the `out/` folder or use a GitHub Action
 
-## Development Notes
+## License
 
-- The website uses vanilla HTML, CSS, and JavaScript with no external dependencies
-- The shopping cart functionality is client-side only and would need to be connected to a backend system for a production site
-- Fonts are loaded from Google Fonts
-
-## Credits
-
-Created for PowerShade, a fictional company selling solar-powered beach umbrellas. 
+All rights reserved. PowerShade © 2026
