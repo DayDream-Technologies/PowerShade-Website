@@ -5,6 +5,7 @@ import { CTA } from '@/components/sections/CTA'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SlideIn } from '@/components/animations/SlideIn'
 import { Card } from '@/components/ui/Card'
+import { img } from '@/lib/utils'
 
 export const metadata: Metadata = {
   title: 'Our Product',
@@ -25,17 +26,17 @@ const technologies = [
   {
     title: 'Flexible Solar Panels',
     description: 'Our proprietary flexible solar panels are lightweight, durable, and designed to withstand the rigors of beach use. Unlike rigid panels, our technology bends with the umbrella and resists cracking.',
-    image: '/images/Mini Product Photo.png',
+    image: img('/images/Mini Product Photo.png'),
   },
   {
     title: 'Power Management System',
     description: 'Our intelligent power management system optimizes energy collection, storage, and distribution to your devices. The waterproof housing protects sensitive electronics while maintaining efficient charging.',
-    image: '/images/Accessory Pack.png',
+    image: img('/images/Accessory Pack.png'),
   },
   {
     title: 'Battery Storage',
     description: 'Each PowerShade comes with a 10,000mAh lithium battery that stores excess energy for use after sunset or on cloudy days. The removable battery pack can also be pre-charged at home before your beach day.',
-    image: '/images/PowerShade XL.png',
+    image: img('/images/PowerShade XL.png'),
   },
 ]
 
@@ -45,7 +46,7 @@ export default function AboutPage() {
       <PageBanner
         title="Solar-Powered Beach Umbrellas"
         description="Stay cool, stay connected—experience the future of beach days with PowerShade"
-        backgroundImage="/images/beach-family-demo.png"
+        backgroundImage={img('/images/beach-family-demo.png')}
       />
 
       {/* Product Showcase */}
@@ -83,7 +84,7 @@ export default function AboutPage() {
 
             <SlideIn direction="right">
               <Image
-                src="/images/pro-product-photo.png"
+                src={img('/images/pro-product-photo.png')}
                 alt="PowerShade Pro Model showing integrated solar panels"
                 width={600}
                 height={600}
@@ -155,7 +156,7 @@ export default function AboutPage() {
 
             <SlideIn direction="right">
               <Image
-                src="/images/Relaxing demo.png"
+                src={img('/images/Relaxing demo.png')}
                 alt="PowerShade being used at a beautiful beach setting"
                 width={600}
                 height={400}

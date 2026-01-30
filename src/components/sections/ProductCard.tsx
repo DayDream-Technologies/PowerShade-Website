@@ -5,6 +5,7 @@ import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { type Product } from '@/data/products'
+import { img } from '@/lib/utils'
 
 interface ProductCardProps {
   product: Product
@@ -29,7 +30,7 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Image */}
       <div className="relative aspect-square bg-gray-50">
         <Image
-          src={product.image}
+          src={img(product.image)}
           alt={product.name}
           fill
           className="object-contain p-4"

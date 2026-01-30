@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SlideIn } from '@/components/animations/SlideIn'
+import { img } from '@/lib/utils'
 
 const productFeatures = [
   'Premium UV protection fabric',
@@ -55,7 +56,7 @@ export function ProductPreview() {
             <div className="relative">
               <div className="absolute inset-0 bg-ocean-gradient rounded-2xl transform rotate-3 opacity-20" />
               <Image
-                src="/images/beach-family-demo.png"
+                src={img('/images/beach-family-demo.png')}
                 alt="Family enjoying PowerShade at the beach"
                 width={600}
                 height={400}

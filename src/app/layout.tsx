@@ -5,6 +5,8 @@ import { Footer } from '@/components/layout/Footer'
 import { SkipLink } from '@/components/layout/SkipLink'
 import './globals.css'
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+
 const montserrat = Montserrat({
   subsets: ['latin'],
   variable: '--font-montserrat',
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
     description: 'PowerShade solar-powered beach umbrellas keep your devices charged while you enjoy the sun.',
     images: [
       {
-        url: '/images/pro-product-photo.png',
+        url: `${basePath}/images/pro-product-photo.png`,
         width: 1200,
         height: 630,
         alt: 'PowerShade Solar Beach Umbrella',
@@ -48,11 +50,11 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'PowerShade - Solar-Powered Beach Umbrellas',
     description: 'PowerShade solar-powered beach umbrellas keep your devices charged while you enjoy the sun.',
-    images: ['/images/pro-product-photo.png'],
+    images: [`${basePath}/images/pro-product-photo.png`],
   },
   icons: {
-    icon: '/images/Logos/PowerShade_logo_4._croppedPNG.PNG',
-    apple: '/images/Logos/PowerShade_logo_4._croppedPNG.PNG',
+    icon: `${basePath}/images/Logos/PowerShade_logo_4._croppedPNG.PNG`,
+    apple: `${basePath}/images/Logos/PowerShade_logo_4._croppedPNG.PNG`,
   },
   themeColor: '#0077b6',
 }

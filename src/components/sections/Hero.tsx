@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useSpring, animated } from '@react-spring/web'
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/animations/FadeIn'
+import { img } from '@/lib/utils'
 
 export function Hero() {
   const floatSpring = useSpring({
@@ -28,7 +29,7 @@ export function Hero() {
           playsInline
           className="w-full h-full object-cover opacity-40"
         >
-          <source src="/images/Logos/Animates_Powershade_Logo.mp4" type="video/mp4" />
+          <source src={img('/images/Logos/Animates_Powershade_Logo.mp4')} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-ocean-900/80 via-ocean-800/60 to-ocean-700/80" />
       </div>
@@ -71,7 +72,7 @@ export function Hero() {
             <div className="relative">
               <animated.div style={floatSpring} className="relative">
                 <Image
-                  src="/images/pro-product-photo.png"
+                  src={img('/images/pro-product-photo.png')}
                   alt="PowerShade Pro Model"
                   width={600}
                   height={600}
