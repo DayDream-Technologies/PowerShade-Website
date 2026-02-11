@@ -5,6 +5,7 @@ import { ProductCard } from '@/components/sections/ProductCard'
 import { WhyShop } from '@/components/sections/WhyShop'
 import { FAQ } from '@/components/sections/FAQ'
 import { FadeIn } from '@/components/animations/FadeIn'
+import { Stagger } from '@/components/animations/Stagger'
 import { getProductsByCategory } from '@/data/products'
 
 const categoryLinks = [
@@ -49,56 +50,50 @@ export function ShopPage() {
       </section>
 
       {/* Umbrellas Section */}
-      <section id="umbrellas" className="section-padding bg-white scroll-mt-32 scene-waves">
+      <section id="umbrellas" className="section-padding bg-white scroll-mt-32 section-soft-gradient">
         <div className="container">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-bold text-center text-ocean-800 mb-8">
               ☀️ Solar Umbrellas
             </h2>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {umbrellas.map((product, index) => (
-              <FadeIn key={product.id} delay={index * 100}>
-                <ProductCard product={product} />
-              </FadeIn>
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={80}>
+            {umbrellas.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* Accessories Section */}
-      <section id="accessories" className="section-padding bg-gray-50 scroll-mt-32 scene-clouds">
+      <section id="accessories" className="section-padding bg-gray-50 scroll-mt-32 section-subtle-grid">
         <div className="container">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-bold text-center text-ocean-800 mb-8">
               🔧 Accessories
             </h2>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {accessories.map((product, index) => (
-              <FadeIn key={product.id} delay={index * 100}>
-                <ProductCard product={product} />
-              </FadeIn>
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto" staggerDelay={80}>
+            {accessories.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 
       {/* Bundles Section */}
-      <section id="bundles" className="section-padding bg-white scroll-mt-32 scene-sun-rays-right">
+      <section id="bundles" className="section-padding bg-white scroll-mt-32 section-soft-gradient">
         <div className="container">
           <FadeIn>
             <h2 className="text-2xl md:text-3xl font-bold text-center text-ocean-800 mb-8">
               📦 Bundles
             </h2>
           </FadeIn>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {bundles.map((product, index) => (
-              <FadeIn key={product.id} delay={index * 100}>
-                <ProductCard product={product} />
-              </FadeIn>
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto" staggerDelay={80}>
+            {bundles.map((product) => (
+              <ProductCard key={product.id} product={product} />
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 

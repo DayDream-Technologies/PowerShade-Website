@@ -24,15 +24,15 @@ export function Stagger({
 
   const trail = useTrail(items.length, {
     opacity: inView ? 1 : 0,
-    transform: inView ? 'translateY(0)' : 'translateY(20px)',
-    delay,
+    transform: inView ? 'translateY(0)' : 'translateY(24px)',
+    delay: (i: number) => delay + i * staggerDelay,
     config: { tension: 280, friction: 60 },
   })
 
   return (
     <div ref={ref} className={className}>
       {trail.map((style, index) => (
-        <animated.div key={index} style={{ ...style, transitionDelay: `${index * staggerDelay}ms` }}>
+        <animated.div key={index} style={style}>
           {items[index]}
         </animated.div>
       ))}

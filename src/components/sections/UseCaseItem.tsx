@@ -8,16 +8,16 @@ interface UseCaseItemProps {
   reverse?: boolean
 }
 
-// Map scene names to CSS classes
+// Map scene names to subtle section background classes
 const sceneClasses: Record<UseCase['scene'], string> = {
-  'waves': 'scene-waves',
-  'waves-double': 'scene-waves-double',
-  'grass': 'scene-grass',
-  'camping': 'scene-camping',
-  'backyard': 'scene-backyard',
-  'clouds': 'scene-clouds',
-  'sun-rays': 'scene-sun-rays',
-  'beach': 'scene-beach',
+  'waves': 'section-soft-gradient',
+  'waves-double': 'section-subtle-grid',
+  'grass': 'section-soft-gradient',
+  'camping': 'section-subtle-grid',
+  'backyard': 'section-soft-gradient',
+  'clouds': 'section-subtle-grid',
+  'sun-rays': 'section-soft-gradient',
+  'beach': 'section-soft-gradient',
 }
 
 export function UseCaseItem({ useCase, reverse = false }: UseCaseItemProps) {

@@ -9,7 +9,7 @@ interface PageBannerProps {
 export function PageBanner({ title, description, backgroundImage }: PageBannerProps) {
   return (
     <section
-      className={`relative py-20 md:py-28 overflow-hidden ${!backgroundImage ? 'scene-waves-double' : ''}`}
+      className={`relative py-20 md:py-28 overflow-hidden ${!backgroundImage ? 'section-soft-wave' : ''}`}
       style={
         backgroundImage
           ? {

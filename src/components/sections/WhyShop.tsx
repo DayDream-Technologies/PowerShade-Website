@@ -1,5 +1,6 @@
 import { Card } from '@/components/ui/Card'
 import { FadeIn } from '@/components/animations/FadeIn'
+import { Stagger } from '@/components/animations/Stagger'
 
 const benefits = [
   {
@@ -26,7 +27,7 @@ const benefits = [
 
 export function WhyShop() {
   return (
-    <section className="section-padding bg-gray-50 scene-beach">
+    <section className="section-padding bg-gray-50 section-soft-gradient">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-ocean-800 mb-12">
@@ -34,21 +35,19 @@ export function WhyShop() {
           </h2>
         </FadeIn>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {benefits.map((benefit, index) => (
-            <FadeIn key={benefit.title} delay={index * 100}>
-              <Card className="h-full text-center">
-                <div className="text-4xl mb-4">{benefit.icon}</div>
-                <h3 className="text-lg font-semibold text-ocean-700 mb-2">
-                  {benefit.title}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {benefit.description}
-                </p>
-              </Card>
-            </FadeIn>
+        <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={80}>
+          {benefits.map((benefit) => (
+            <Card key={benefit.title} className="h-full text-center">
+              <div className="text-4xl mb-4">{benefit.icon}</div>
+              <h3 className="text-lg font-semibold text-ocean-700 mb-2">
+                {benefit.title}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {benefit.description}
+              </p>
+            </Card>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   )

@@ -1,14 +1,7 @@
 export {
-  WavesBackground,
-  WavesDoubleBackground,
-  SunRaysBackground,
-  SunRaysRightBackground,
-  GrassBackground,
-  CloudsBackground,
-  SandDunesBackground,
-  BeachBackground,
-  CampingBackground,
-  BackyardBackground,
+  SectionSoftGradient,
+  SectionSubtleGrid,
+  SectionSoftWave,
   SceneBackground,
   type SceneType,
 } from './SceneBackgrounds'

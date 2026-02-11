@@ -15,7 +15,7 @@ export function FadeIn({
   children,
   delay = 0,
   direction = 'up',
-  distance = 30,
+  distance = 40,
   className = '',
   once = true,
 }: FadeInProps) {

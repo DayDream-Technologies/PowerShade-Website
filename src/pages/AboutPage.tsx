@@ -49,7 +49,7 @@ export function AboutPage() {
       />
 
       {/* Product Showcase */}
-      <section className="section-padding bg-white scene-clouds">
+      <section className="section-padding bg-white section-soft-gradient">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <SlideIn direction="left">
@@ -95,7 +95,7 @@ export function AboutPage() {
       </section>
 
       {/* Technology Section */}
-      <section className="section-padding bg-gray-50 scene-sun-rays">
+      <section className="section-padding bg-gray-50 section-subtle-grid">
         <div className="container">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-ocean-800 mb-12">
@@ -130,7 +130,7 @@ export function AboutPage() {
       </section>
 
       {/* Sustainability Section */}
-      <section className="section-padding bg-white scene-grass">
+      <section className="section-padding bg-white section-soft-gradient">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <SlideIn direction="left">

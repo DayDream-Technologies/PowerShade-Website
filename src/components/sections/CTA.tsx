@@ -21,7 +21,7 @@ export function CTA({
   secondaryButton,
 }: CTAProps) {
   return (
-    <section className="section-padding bg-cta-gradient scene-sand-dunes">
+    <section className="section-padding bg-cta-gradient">
       <div className="container">
         <FadeIn>
           <div className="text-center max-w-3xl mx-auto">

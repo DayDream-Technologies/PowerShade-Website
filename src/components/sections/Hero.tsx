@@ -29,6 +29,8 @@ export function Hero() {
           <source src={img('/images/Logos/Animates_Powershade_Logo.mp4')} type="video/mp4" />
         </video>
       </div>
+      {/* Subtle animated overlay */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-ocean-900/30 via-transparent to-ocean-800/20 pointer-events-none animate-hero-shine" />
 
       {/* Content - text and animated umbrella on top */}
       <div className="container relative z-10">

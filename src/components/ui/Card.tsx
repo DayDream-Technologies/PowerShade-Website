@@ -24,9 +24,9 @@ export function Card({
   const [isHovered, setIsHovered] = useState(false)
 
   const springProps = useSpring({
-    transform: hover && isHovered ? 'translateY(-8px)' : 'translateY(0px)',
+    transform: hover && isHovered ? 'translateY(-6px)' : 'translateY(0px)',
     boxShadow: hover && isHovered
-      ? '0 20px 40px rgba(0, 119, 182, 0.15)'
+      ? '0 12px 32px rgba(0, 119, 182, 0.15)'
       : '0 4px 20px rgba(0, 119, 182, 0.08)',
     config: { tension: 300, friction: 20 },
   })
@@ -35,7 +35,7 @@ export function Card({
     <animated.div
       style={springProps}
       className={`
-        bg-white rounded-xl border border-gray-100
+        bg-white rounded-xl border border-slate-100 shadow-card
         transition-colors duration-300
         ${hover ? 'hover:border-ocean-200' : ''}
         ${paddingClasses[padding]}

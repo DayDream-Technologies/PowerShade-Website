@@ -44,7 +44,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section id="faq" className="section-padding bg-gradient-to-br from-gray-50 to-ocean-50 scene-sand-dunes">
+    <section id="faq" className="section-padding bg-gradient-to-br from-gray-50 to-ocean-50 section-soft-gradient">
       <div className="container">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-ocean-800 mb-4">

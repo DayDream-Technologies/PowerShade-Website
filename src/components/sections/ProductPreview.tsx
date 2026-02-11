@@ -14,7 +14,7 @@ const productFeatures = [
 
 export function ProductPreview() {
   return (
-    <section className="section-padding bg-white scene-sun-rays-right">
+    <section className="section-padding bg-white section-subtle-grid">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
