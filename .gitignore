@@ -11,6 +11,10 @@ out/
 dist/
 build/
 
+# Secrets and sensitive local config
+.amplify/
+.amplify-hosting/
+
 # Environment
 .env
 .env.local

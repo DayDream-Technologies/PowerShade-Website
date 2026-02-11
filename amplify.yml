@@ -1,0 +1,21 @@
+# Static export only. Build produces out/; post-build copies to .amplify-hosting/static and adds deploy-manifest
+# so Amplify does not run Next.js SSR checks. Set app platform to WEB and branch framework to Other.
+version: 1
+applications:
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+        build:
+          commands:
+            - npm run build
+            - sh scripts/amplify-post-build.sh
+      artifacts:
+        baseDirectory: .amplify-hosting
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*
+          - .next/cache/**/*
