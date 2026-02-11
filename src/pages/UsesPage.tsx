@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import { SeoHead } from '@/components/SeoHead'
 import { PageBanner } from '@/components/sections/PageBanner'
 import { CTA } from '@/components/sections/CTA'
 import { UseCaseItem } from '@/components/sections/UseCaseItem'
@@ -7,10 +7,11 @@ import { useCases } from '@/data/useCases'
 export function UsesPage() {
   return (
     <>
-      <Helmet>
-        <title>Use Cases | PowerShade</title>
-        <meta name="description" content="See how PowerShade solar umbrellas enhance beach days, camping trips, outdoor events, and backyard living. Stay powered anywhere under the sun." />
-      </Helmet>
+      <SeoHead
+        title="Use Cases | PowerShade"
+        description="See how PowerShade solar umbrellas enhance beach days, camping trips, outdoor events, and backyard living. Stay powered anywhere under the sun."
+        path="/uses"
+      />
       <PageBanner
         title="PowerShade Use Cases"
         description="How our solar-powered beach umbrellas can enhance your outdoor experiences"

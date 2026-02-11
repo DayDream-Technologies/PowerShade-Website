@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import { SeoHead } from '@/components/SeoHead'
 import { Hero } from '@/components/sections/Hero'
 import { Features } from '@/components/sections/Features'
 import { ProductPreview } from '@/components/sections/ProductPreview'
@@ -7,10 +7,11 @@ import { CTA } from '@/components/sections/CTA'
 export function HomePage() {
   return (
     <>
-      <Helmet>
-        <title>PowerShade - Solar-Powered Beach Umbrellas</title>
-        <meta name="description" content="PowerShade solar-powered beach umbrellas keep your devices charged while you enjoy the sun. Shop our innovative USB-charging umbrellas made in Michigan." />
-      </Helmet>
+      <SeoHead
+        title="PowerShade - Solar-Powered Beach Umbrellas"
+        description="PowerShade solar-powered beach umbrellas keep your devices charged while you enjoy the sun. Shop our innovative USB-charging umbrellas made in Michigan."
+        path="/"
+      />
       <Hero />
       <Features />
       <ProductPreview />

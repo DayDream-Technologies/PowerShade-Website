@@ -1,4 +1,5 @@
-import { Helmet } from 'react-helmet-async'
+import { SeoHead } from '@/components/SeoHead'
+import { ShopStructuredData } from '@/components/StructuredData'
 import { PageBanner } from '@/components/sections/PageBanner'
 import { ProductCard } from '@/components/sections/ProductCard'
 import { WhyShop } from '@/components/sections/WhyShop'
@@ -19,10 +20,12 @@ export function ShopPage() {
 
   return (
     <>
-      <Helmet>
-        <title>Shop | PowerShade</title>
-        <meta name="description" content="Shop PowerShade solar-powered beach umbrellas starting at $259.99. Free shipping over $100, 2-year warranty, and 30-day returns on all orders." />
-      </Helmet>
+      <SeoHead
+        title="Shop | PowerShade"
+        description="Shop PowerShade solar-powered beach umbrellas starting at $259.99. Free shipping over $100, 2-year warranty, and 30-day returns on all orders."
+        path="/shop"
+      />
+      <ShopStructuredData />
       <PageBanner
         title="Shop PowerShade"
         description="Discover the perfect solar-powered umbrella for your outdoor adventures"

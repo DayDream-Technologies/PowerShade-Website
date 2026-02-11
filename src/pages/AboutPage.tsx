@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async'
+import { SeoHead } from '@/components/SeoHead'
 import { PageBanner } from '@/components/sections/PageBanner'
 import { CTA } from '@/components/sections/CTA'
 import { FadeIn } from '@/components/animations/FadeIn'
@@ -37,10 +37,11 @@ const technologies = [
 export function AboutPage() {
   return (
     <>
-      <Helmet>
-        <title>Our Product | PowerShade</title>
-        <meta name="description" content="Discover PowerShade's solar technology - flexible panels, battery storage, and USB charging ports. Learn how our Michigan-made beach umbrellas keep you connected." />
-      </Helmet>
+      <SeoHead
+        title="Our Product | PowerShade"
+        description="Discover PowerShade's solar technology - flexible panels, battery storage, and USB charging ports. Learn how our Michigan-made beach umbrellas keep you connected."
+        path="/about"
+      />
       <PageBanner
         title="Solar-Powered Beach Umbrellas"
         description="Stay cool, stay connected—experience the future of beach days with PowerShade"

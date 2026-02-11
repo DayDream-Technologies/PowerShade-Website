@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dwasilewski3.github.io/PowerShade-Website/sitemap.xml

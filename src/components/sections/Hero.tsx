@@ -17,20 +17,18 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-ocean-800">
-      {/* Video Background - behind gradient */}
-      <div className="absolute inset-0 z-0">
+      {/* Video Background - full viewport width */}
+      <div className="absolute inset-y-0 left-1/2 z-0 w-screen min-w-screen -translate-x-1/2">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full min-w-full min-h-full object-cover object-center opacity-40"
         >
           <source src={img('/images/Logos/Animates_Powershade_Logo.mp4')} type="video/mp4" />
         </video>
       </div>
-      {/* Blue gradient - behind content and umbrella */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-ocean-900/80 via-ocean-800/60 to-ocean-700/80 pointer-events-none" />
 
       {/* Content - text and animated umbrella on top */}
       <div className="container relative z-10">
