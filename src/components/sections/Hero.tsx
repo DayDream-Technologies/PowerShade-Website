@@ -17,7 +17,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-ocean-800">
-      {/* Video Background */}
+      {/* Video Background - behind gradient */}
       <div className="absolute inset-0 z-0">
         <video
           autoPlay
@@ -28,10 +28,11 @@ export function Hero() {
         >
           <source src={img('/images/Logos/Animates_Powershade_Logo.mp4')} type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-ocean-900/80 via-ocean-800/60 to-ocean-700/80" />
       </div>
+      {/* Blue gradient - behind content and umbrella */}
+      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-ocean-900/80 via-ocean-800/60 to-ocean-700/80 pointer-events-none" />
 
-      {/* Content */}
+      {/* Content - text and animated umbrella on top */}
       <div className="container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
