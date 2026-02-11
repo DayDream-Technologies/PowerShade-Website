@@ -1,14 +1,15 @@
 # PowerShade Website
 
-A modern React/Next.js website for PowerShade - solar-powered beach umbrellas that keep your devices charged while you enjoy the sun.
+A modern React website for PowerShade - solar-powered beach umbrellas that keep your devices charged while you enjoy the sun.
 
 ## Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: React with Vite
+- **Routing**: React Router
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: React Spring
-- **Deployment**: Static export for AWS Amplify (no SSR)
+- **Deployment**: Static build for AWS Amplify (SPA)
 
 ## Getting Started
 
@@ -37,7 +38,7 @@ npm run dev
 .\build.ps1 -Dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
 ### Building for Production
 
@@ -49,7 +50,11 @@ npm run build
 .\build.ps1 -Export
 ```
 
-The static site will be exported to the `out/` folder.
+The static site is output to the `dist/` folder. To preview the production build locally:
+
+```bash
+npm run preview
+```
 
 ## Project Structure
 
@@ -57,20 +62,20 @@ The static site will be exported to the `out/` folder.
 ├── public/
 │   └── images/           # Static images and assets
 ├── src/
-│   ├── app/              # Next.js App Router pages
-│   │   ├── page.tsx      # Home page
-│   │   ├── about/        # About/Product page
-│   │   ├── uses/         # Use Cases page
-│   │   └── shop/         # Shop page
+│   ├── pages/            # Route pages (Home, About, Uses, Shop)
 │   ├── components/
 │   │   ├── animations/   # React Spring animation wrappers
-│   │   ├── layout/       # Header, Footer, SkipLink
+│   │   ├── layout/       # Header, Footer, SkipLink, RootLayout
 │   │   ├── sections/     # Page sections (Hero, Features, etc.)
 │   │   └── ui/           # Reusable UI components
 │   ├── data/             # Static data (products, FAQ, etc.)
-│   └── lib/              # Utility functions
+│   ├── lib/              # Utility functions
+│   ├── App.tsx           # Routes and root layout
+│   ├── main.tsx          # Entry point
+│   └── globals.css       # Global styles
+├── index.html            # HTML entry
+├── vite.config.ts        # Vite configuration
 ├── tailwind.config.ts    # Tailwind CSS configuration
-└── next.config.js        # Next.js configuration
 ```
 
 ## Features
@@ -78,8 +83,7 @@ The static site will be exported to the `out/` folder.
 - **Responsive Design**: Fully responsive across all device sizes
 - **Animations**: Smooth scroll-triggered and hover animations using React Spring
 - **Accessibility**: Skip links, semantic HTML, proper ARIA attributes
-- **SEO Optimized**: Meta descriptions, Open Graph tags, JSON-LD schema
-- **Performance**: Image optimization, lazy loading, font preloading
+- **SEO Optimized**: Per-route meta (react-helmet-async), Open Graph tags, JSON-LD schema
 - **Theme**: Custom "Ocean Sunset" color palette with Tailwind CSS
 
 ## Build Script (PowerShell)
@@ -87,29 +91,22 @@ The static site will be exported to the `out/` folder.
 The `build.ps1` script provides convenient commands:
 
 ```powershell
-.\build.ps1 -Dev      # Start development server
+.\build.ps1 -Dev      # Start development server (http://localhost:5173)
 .\build.ps1 -Build    # Build for production
-.\build.ps1 -Export   # Export static site to out/
-.\build.ps1 -Clean    # Remove build artifacts
+.\build.ps1 -Export   # Build static site to dist/
+.\build.ps1 -Clean    # Remove build artifacts (dist, node_modules)
 .\build.ps1 -Install  # Install dependencies
 ```
 
-## Deployment (AWS Amplify only)
+## Deployment (AWS Amplify)
 
-This site is a **static export** (no server, no SSR). Deployment is via AWS Amplify only.
+This site is a **static SPA**. Deployment is via AWS Amplify.
 
-Build and artifact layout are defined in `amplify.yml`; the post-build script writes a static deploy manifest so Amplify does not treat the app as Next.js SSR.
+Build and artifact layout are defined in `amplify.yml`: the build runs `npm run build` (Vite outputs to `dist/`), then the post-build script copies `dist/` to `.amplify-hosting/static` and writes a static deploy manifest so Amplify serves the app as static content.
 
-**If Amplify shows:** *"It looks like you are attempting to deploy a Next.js SSR app..."* — you do **not** need SSR. Fix it by telling Amplify this is a static app:
-
-1. **App platform**: Set to **WEB** (static). If the console doesn’t show it, use the CLI:
-   ```bash
-   aws amplify update-app --app-id <APP_ID> --platform WEB --region <REGION>
-   ```
-2. **Branch framework**: Set to **Other** (not "Next.js - SSR").  
+1. **App platform**: Set to **WEB** (static).
+2. **Branch framework**: Set to **Other** (not "Next.js - SSR").
    In the console: Hosting → select branch (e.g. **main**) → Build settings / Edit → set **Framework** to **Other** → Save → Redeploy.
-
-After that, Amplify will use the static artifact and the error will stop.
 
 ## License
 

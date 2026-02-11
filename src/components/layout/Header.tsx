@@ -1,8 +1,5 @@
-'use client'
-
 import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { Link, useLocation } from 'react-router-dom'
 import { useSpring, animated } from '@react-spring/web'
 
 const navLinks = [
@@ -15,7 +12,7 @@ const navLinks = [
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
-  const pathname = usePathname()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,8 +52,8 @@ export function Header() {
       <div className="container">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <Link 
-            href="/" 
+          <Link
+            to="/"
             className="text-2xl font-heading font-bold text-ocean-500 hover:text-ocean-600 transition-colors"
           >
             PowerShade
@@ -70,7 +67,7 @@ export function Header() {
               return (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${
                       isActive
                         ? 'text-ocean-500 bg-ocean-50'
@@ -121,7 +118,7 @@ export function Header() {
                 return (
                   <li key={link.href}>
                     <Link
-                      href={link.href}
+                      to={link.href}
                       onClick={() => setIsMenuOpen(false)}
                       className={`block px-4 py-3 rounded-lg font-medium transition-all ${
                         isActive

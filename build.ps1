@@ -4,7 +4,7 @@
 
 .DESCRIPTION
     PowerShell script to manage development, building, and deployment
-    of the PowerShade Next.js website.
+    of the PowerShade React (Vite) website.
 
 .PARAMETER Dev
     Start the development server
@@ -27,7 +27,7 @@
 
 .EXAMPLE
     .\build.ps1 -Export
-    Builds and exports static site to the 'out' folder
+    Builds and outputs static site to the 'dist' folder
 #>
 
 param(
@@ -49,7 +49,7 @@ function Write-Status {
 if ($Clean) {
     Write-Status "Cleaning build artifacts..."
     
-    $foldersToRemove = @(".next", "out", "node_modules")
+    $foldersToRemove = @("dist", "node_modules")
     foreach ($folder in $foldersToRemove) {
         if (Test-Path $folder) {
             Write-Host "  Removing $folder..."
@@ -76,7 +76,7 @@ if ($Install) {
 # Development server
 if ($Dev) {
     Write-Status "Starting development server..."
-    Write-Host "Open http://localhost:3000 in your browser" -ForegroundColor Yellow
+    Write-Host "Open http://localhost:5173 in your browser" -ForegroundColor Yellow
     npm run dev
 }
 
@@ -107,8 +107,8 @@ if ($Export) {
         exit 1
     }
     
-    Write-Host "`nStatic site exported to 'out' folder!" -ForegroundColor Green
-    Write-Host "Deploy the 'out' folder contents to GitHub Pages" -ForegroundColor Yellow
+    Write-Host "`nStatic site built to 'dist' folder!" -ForegroundColor Green
+    Write-Host "Deploy the 'dist' folder contents to GitHub Pages or Amplify" -ForegroundColor Yellow
 }
 
 # Show help if no parameters
@@ -121,10 +121,10 @@ PowerShade Build Script
 Usage: .\build.ps1 [options]
 
 Options:
-  -Dev      Start development server (http://localhost:3000)
+  -Dev      Start development server (http://localhost:5173)
   -Build    Build production version
   -Export   Build and export static site for GitHub Pages
-  -Clean    Remove .next, out, and node_modules folders
+  -Clean    Remove dist and node_modules folders
   -Install  Install npm dependencies
 
 Examples:

@@ -1,6 +1,3 @@
-'use client'
-
-import Image from 'next/image'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
@@ -29,11 +26,10 @@ export function ProductCard({ product }: ProductCardProps) {
 
       {/* Image */}
       <div className="relative aspect-square bg-gray-50">
-        <Image
+        <img
           src={img(product.image)}
           alt={product.name}
-          fill
-          className="object-contain p-4"
+          className="absolute inset-0 w-full h-full object-contain p-4"
         />
       </div>
 

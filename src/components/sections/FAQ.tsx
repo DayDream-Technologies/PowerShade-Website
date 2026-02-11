@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { useSpring, animated } from '@react-spring/web'
 import { FadeIn } from '@/components/animations/FadeIn'

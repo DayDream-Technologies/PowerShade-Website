@@ -1,5 +1,3 @@
-'use client'
-
 import { useTrail, animated } from '@react-spring/web'
 import { useInView } from 'react-intersection-observer'
 import { ReactNode, Children } from 'react'

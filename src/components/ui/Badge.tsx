@@ -1,5 +1,3 @@
-'use client'
-
 type BadgeVariant = 'bestseller' | 'new' | 'sale' | 'default'
 
 interface BadgeProps {

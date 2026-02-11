@@ -1,16 +1,10 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
+import { Helmet } from 'react-helmet-async'
 import { PageBanner } from '@/components/sections/PageBanner'
 import { ProductCard } from '@/components/sections/ProductCard'
 import { WhyShop } from '@/components/sections/WhyShop'
 import { FAQ } from '@/components/sections/FAQ'
 import { FadeIn } from '@/components/animations/FadeIn'
-import { products, getProductsByCategory } from '@/data/products'
-
-export const metadata: Metadata = {
-  title: 'Shop',
-  description: 'Shop PowerShade solar-powered beach umbrellas starting at $259.99. Free shipping over $100, 2-year warranty, and 30-day returns on all orders.',
-}
+import { getProductsByCategory } from '@/data/products'
 
 const categoryLinks = [
   { href: '#umbrellas', label: '☀️ Umbrellas' },
@@ -18,13 +12,17 @@ const categoryLinks = [
   { href: '#bundles', label: '📦 Bundles' },
 ]
 
-export default function ShopPage() {
+export function ShopPage() {
   const umbrellas = getProductsByCategory('umbrella')
   const accessories = getProductsByCategory('accessory')
   const bundles = getProductsByCategory('bundle')
 
   return (
     <>
+      <Helmet>
+        <title>Shop | PowerShade</title>
+        <meta name="description" content="Shop PowerShade solar-powered beach umbrellas starting at $259.99. Free shipping over $100, 2-year warranty, and 30-day returns on all orders." />
+      </Helmet>
       <PageBanner
         title="Shop PowerShade"
         description="Discover the perfect solar-powered umbrella for your outdoor adventures"
@@ -35,13 +33,13 @@ export default function ShopPage() {
         <div className="container">
           <div className="flex flex-wrap justify-center gap-4">
             {categoryLinks.map((link) => (
-              <Link
+              <a
                 key={link.href}
                 href={link.href}
                 className="px-6 py-3 bg-ocean-500 text-white rounded-lg font-medium hover:bg-ocean-600 transition-colors shadow-button hover:shadow-button-hover"
               >
                 {link.label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

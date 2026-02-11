@@ -1,5 +1,3 @@
-'use client'
-
 import { Card } from '@/components/ui/Card'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { features } from '@/data/features'

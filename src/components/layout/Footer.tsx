@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 
 const footerLinks = {
   shop: [
@@ -42,7 +42,7 @@ export function Footer() {
               {footerLinks.shop.map((link) => (
                 <li key={link.href + link.label}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {link.label}
@@ -61,7 +61,7 @@ export function Footer() {
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {link.label}
@@ -80,7 +80,7 @@ export function Footer() {
               {footerLinks.support.map((link, index) => (
                 <li key={link.href + index}>
                   <Link
-                    href={link.href}
+                    to={link.href}
                     className="text-gray-400 hover:text-white transition-colors"
                   >
                     {link.label}

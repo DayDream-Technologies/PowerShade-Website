@@ -1,6 +1,3 @@
-'use client'
-
-import Image from 'next/image'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SlideIn } from '@/components/animations/SlideIn'
 import { type UseCase } from '@/data/useCases'
@@ -63,7 +60,7 @@ export function UseCaseItem({ useCase, reverse = false }: UseCaseItemProps) {
       <SlideIn direction={reverse ? 'left' : 'right'} className={reverse ? 'lg:col-start-1 lg:row-start-1' : ''}>
         <div className="relative">
           <div className={`absolute inset-0 bg-ocean-gradient rounded-2xl transform ${reverse ? '-rotate-3' : 'rotate-3'} opacity-20`} />
-          <Image
+          <img
             src={img(useCase.image)}
             alt={useCase.title}
             width={600}

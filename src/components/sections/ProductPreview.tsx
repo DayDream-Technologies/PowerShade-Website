@@ -1,6 +1,3 @@
-'use client'
-
-import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SlideIn } from '@/components/animations/SlideIn'
@@ -55,7 +52,7 @@ export function ProductPreview() {
           <SlideIn direction="right">
             <div className="relative">
               <div className="absolute inset-0 bg-ocean-gradient rounded-2xl transform rotate-3 opacity-20" />
-              <Image
+              <img
                 src={img('/images/beach-family-demo.png')}
                 alt="Family enjoying PowerShade at the beach"
                 width={600}

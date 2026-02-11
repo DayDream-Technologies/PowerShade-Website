@@ -1,6 +1,3 @@
-'use client'
-
-import Image from 'next/image'
 import { useSpring, animated } from '@react-spring/web'
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/animations/FadeIn'
@@ -71,13 +68,12 @@ export function Hero() {
           <FadeIn delay={300} direction="right">
             <div className="relative">
               <animated.div style={floatSpring} className="relative">
-                <Image
+                <img
                   src={img('/images/pro-product-photo.png')}
                   alt="PowerShade Pro Model"
                   width={600}
                   height={600}
                   className="w-full max-w-lg mx-auto drop-shadow-2xl"
-                  priority
                 />
               </animated.div>
               <p className="text-center text-ocean-200 text-sm mt-4 italic">

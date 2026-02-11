@@ -1,6 +1,4 @@
-'use client'
-
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import { useSpring, animated } from '@react-spring/web'
 import { useState } from 'react'
 
@@ -65,7 +63,7 @@ export function Button({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Link href={href} className={baseClasses}>
+        <Link to={href} className={baseClasses}>
           {children}
         </Link>
       </animated.div>

@@ -1,17 +1,16 @@
-import { Metadata } from 'next'
+import { Helmet } from 'react-helmet-async'
 import { PageBanner } from '@/components/sections/PageBanner'
 import { CTA } from '@/components/sections/CTA'
 import { UseCaseItem } from '@/components/sections/UseCaseItem'
 import { useCases } from '@/data/useCases'
 
-export const metadata: Metadata = {
-  title: 'Use Cases',
-  description: 'See how PowerShade solar umbrellas enhance beach days, camping trips, outdoor events, and backyard living. Stay powered anywhere under the sun.',
-}
-
-export default function UsesPage() {
+export function UsesPage() {
   return (
     <>
+      <Helmet>
+        <title>Use Cases | PowerShade</title>
+        <meta name="description" content="See how PowerShade solar umbrellas enhance beach days, camping trips, outdoor events, and backyard living. Stay powered anywhere under the sun." />
+      </Helmet>
       <PageBanner
         title="PowerShade Use Cases"
         description="How our solar-powered beach umbrellas can enhance your outdoor experiences"

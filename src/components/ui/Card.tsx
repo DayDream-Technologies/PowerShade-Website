@@ -1,5 +1,3 @@
-'use client'
-
 import { useSpring, animated } from '@react-spring/web'
 import { useState } from 'react'
 

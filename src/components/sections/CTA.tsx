@@ -1,5 +1,3 @@
-'use client'
-
 import { Button } from '@/components/ui/Button'
 import { FadeIn } from '@/components/animations/FadeIn'
 

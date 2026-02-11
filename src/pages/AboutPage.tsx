@@ -1,16 +1,10 @@
-import { Metadata } from 'next'
-import Image from 'next/image'
+import { Helmet } from 'react-helmet-async'
 import { PageBanner } from '@/components/sections/PageBanner'
 import { CTA } from '@/components/sections/CTA'
 import { FadeIn } from '@/components/animations/FadeIn'
 import { SlideIn } from '@/components/animations/SlideIn'
 import { Card } from '@/components/ui/Card'
 import { img } from '@/lib/utils'
-
-export const metadata: Metadata = {
-  title: 'Our Product',
-  description: 'Discover PowerShade\'s solar technology - flexible panels, battery storage, and USB charging ports. Learn how our Michigan-made beach umbrellas keep you connected.',
-}
 
 const productFeatures = [
   'Integrated 25W solar panel array',
@@ -40,9 +34,13 @@ const technologies = [
   },
 ]
 
-export default function AboutPage() {
+export function AboutPage() {
   return (
     <>
+      <Helmet>
+        <title>Our Product | PowerShade</title>
+        <meta name="description" content="Discover PowerShade's solar technology - flexible panels, battery storage, and USB charging ports. Learn how our Michigan-made beach umbrellas keep you connected." />
+      </Helmet>
       <PageBanner
         title="Solar-Powered Beach Umbrellas"
         description="Stay cool, stay connected—experience the future of beach days with PowerShade"
@@ -59,13 +57,13 @@ export default function AboutPage() {
                   Meet the PowerShade Umbrella
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  PowerShade combines cutting-edge solar technology with classic beach comfort. 
-                  Our umbrellas feature flexible, weatherproof solar panels seamlessly integrated 
+                  PowerShade combines cutting-edge solar technology with classic beach comfort.
+                  Our umbrellas feature flexible, weatherproof solar panels seamlessly integrated
                   into the canopy design.
                 </p>
                 <p className="text-gray-600 mb-6">
-                  Each PowerShade umbrella generates up to 25 watts of clean energy—enough to 
-                  charge phones, tablets, speakers, and other small devices while you enjoy 
+                  Each PowerShade umbrella generates up to 25 watts of clean energy—enough to
+                  charge phones, tablets, speakers, and other small devices while you enjoy
                   your day at the beach.
                 </p>
 
@@ -83,12 +81,12 @@ export default function AboutPage() {
             </SlideIn>
 
             <SlideIn direction="right">
-              <Image
+              <img
                 src={img('/images/pro-product-photo.png')}
                 alt="PowerShade Pro Model showing integrated solar panels"
                 width={600}
                 height={600}
-                className="rounded-2xl shadow-card"
+                className="rounded-2xl shadow-card w-full"
               />
             </SlideIn>
           </div>
@@ -114,11 +112,10 @@ export default function AboutPage() {
                     </h3>
                   </div>
                   <div className="aspect-square relative bg-gray-100">
-                    <Image
+                    <img
                       src={tech.image}
                       alt={tech.title}
-                      fill
-                      className="object-contain p-4"
+                      className="absolute inset-0 w-full h-full object-contain p-4"
                     />
                   </div>
                   <div className="p-6">
@@ -141,26 +138,26 @@ export default function AboutPage() {
                   Committed to Sustainability
                 </h2>
                 <p className="text-gray-600 mb-4">
-                  At PowerShade, we believe in harnessing nature's energy without harming 
-                  the environment. Our materials are selected for durability and sustainability, 
-                  and we're proud to manufacture our products in Michigan with a focus on 
+                  At PowerShade, we believe in harnessing nature's energy without harming
+                  the environment. Our materials are selected for durability and sustainability,
+                  and we're proud to manufacture our products in Michigan with a focus on
                   reducing our carbon footprint.
                 </p>
                 <p className="text-gray-600">
-                  For every PowerShade sold, we donate 1% of proceeds to Great Lakes 
-                  conservation efforts. Enjoy the sun responsibly while helping protect 
+                  For every PowerShade sold, we donate 1% of proceeds to Great Lakes
+                  conservation efforts. Enjoy the sun responsibly while helping protect
                   our beautiful Michigan waters.
                 </p>
               </div>
             </SlideIn>
 
             <SlideIn direction="right">
-              <Image
+              <img
                 src={img('/images/Relaxing demo.png')}
                 alt="PowerShade being used at a beautiful beach setting"
                 width={600}
                 height={400}
-                className="rounded-2xl shadow-card"
+                className="rounded-2xl shadow-card w-full"
               />
             </SlideIn>
           </div>
