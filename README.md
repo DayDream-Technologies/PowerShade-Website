@@ -8,7 +8,7 @@ A modern React/Next.js website for PowerShade - solar-powered beach umbrellas th
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Animations**: React Spring
-- **Deployment**: Static export for GitHub Pages
+- **Deployment**: Static export for AWS Amplify (no SSR)
 
 ## Getting Started
 
@@ -45,7 +45,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 # Build the static site
 npm run build
 
-# Or using the build script (recommended for GitHub Pages)
+# Or using the build script
 .\build.ps1 -Export
 ```
 
@@ -89,18 +89,27 @@ The `build.ps1` script provides convenient commands:
 ```powershell
 .\build.ps1 -Dev      # Start development server
 .\build.ps1 -Build    # Build for production
-.\build.ps1 -Export   # Export static site for GitHub Pages
+.\build.ps1 -Export   # Export static site to out/
 .\build.ps1 -Clean    # Remove build artifacts
 .\build.ps1 -Install  # Install dependencies
 ```
 
-## Deployment
+## Deployment (AWS Amplify only)
 
-This site is configured for GitHub Pages deployment:
+This site is a **static export** (no server, no SSR). Deployment is via AWS Amplify only.
 
-1. Run `.\build.ps1 -Export` to build the static site
-2. The `out/` folder contains the deployable files
-3. Configure GitHub Pages to serve from the `out/` folder or use a GitHub Action
+Build and artifact layout are defined in `amplify.yml`; the post-build script writes a static deploy manifest so Amplify does not treat the app as Next.js SSR.
+
+**If Amplify shows:** *"It looks like you are attempting to deploy a Next.js SSR app..."* — you do **not** need SSR. Fix it by telling Amplify this is a static app:
+
+1. **App platform**: Set to **WEB** (static). If the console doesn’t show it, use the CLI:
+   ```bash
+   aws amplify update-app --app-id <APP_ID> --platform WEB --region <REGION>
+   ```
+2. **Branch framework**: Set to **Other** (not "Next.js - SSR").  
+   In the console: Hosting → select branch (e.g. **main**) → Build settings / Edit → set **Framework** to **Other** → Save → Redeploy.
+
+After that, Amplify will use the static artifact and the error will stop.
 
 ## License
 

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "echo 'Static export only; serve out/ with a static server'",
     "lint": "next lint"
   },
   "dependencies": {
